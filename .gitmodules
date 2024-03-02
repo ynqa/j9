@@ -1,0 +1,6 @@
+[submodule "j9-sys/jq"]
+	path = j9-sys/jq
+	url = https://github.com/jqlang/jq.git
+	fetchRecurseSubmodules = true
+	# jq-1.7.1
+	branch = 71c2ab509a8628dbbad4bc7b3f98a64aa90d3297

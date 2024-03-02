@@ -1,0 +1,15 @@
+[package]
+name = "j9"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "j9"
+path = "src/lib.rs"
+
+[dependencies]
+j9-sys = { path = "../j9-sys", version = "0.1.0" }
+thiserror = "1.0.57"
+
+[dev-dependencies]
+anyhow = "1.0.80"

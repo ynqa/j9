@@ -1,0 +1,11 @@
+[package]
+name = "j9-sys"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[build-dependencies]
+anyhow = "1.0.80"
+autotools = "0.2.6"
+bindgen = "0.69.4"

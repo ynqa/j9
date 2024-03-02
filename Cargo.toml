@@ -1,0 +1,5 @@
+[workspace]
+members = [
+  "j9",
+  "j9-sys",
+]
