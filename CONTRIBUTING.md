@@ -6,7 +6,7 @@ this project even better. Here's a quick guide to get you started.
 ## How to Contribute
 
 1. **Fork the Repository**: Click the "Fork" button at the top right of the
-[j9 repository](https://github.com/ynqa/jq) to create a copy of the
+[j9 repository](https://github.com/ynqa/j9) to create a copy of the
 project in your GitHub account.
 
 2. **Clone the Repository**: On your local machine, open a terminal and run the
