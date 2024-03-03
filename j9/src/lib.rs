@@ -5,7 +5,7 @@ use std::{
 
 use j9_sys::{
     jq_compile, jq_init, jq_next, jq_start, jq_teardown, jv, jv_copy, jv_dump_string, jv_free,
-    jv_get_kind, jv_kind_JV_KIND_INVALID, jv_kind_JV_KIND_STRING, jv_parse, jv_string_value,
+    jv_get_kind, jv_kind_JV_KIND_INVALID, jv_parse, jv_string_value,
 };
 
 mod error;
@@ -47,12 +47,8 @@ pub fn run(program: &str, input: &str) -> Result<Vec<String>> {
         let mut cur = jq_next(state);
 
         while jv_is_valid(cur) {
-            let str = if jv_get_kind(cur) == jv_kind_JV_KIND_STRING {
-                get_string_from_c_char(jv_string_value(cur))?
-            } else {
-                let dumped = jv_dump_string(jv_copy(cur), 0);
-                get_string_from_c_char(jv_string_value(dumped))?
-            };
+            let dumped = jv_dump_string(jv_copy(cur), 0);
+            let str = get_string_from_c_char(jv_string_value(dumped))?;
 
             ret.push(str);
             jv_free(cur);
