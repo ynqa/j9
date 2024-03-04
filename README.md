@@ -1,5 +1,10 @@
 # j9
 
+[![ci](https://github.com/ynqa/j9/actions/workflows/ci.yml/badge.svg)](https://github.com/ynqa/j9/actions/workflows/ci.yml)
+[![Crates.io](https://img.shields.io/crates/v/j9.svg)](https://crates.io/crates/j9)
+[![Documentation](https://docs.rs/j9/badge.svg)](https://docs.rs/j9)
+[![License](https://img.shields.io/crates/l/j9.svg)](LICENSE)
+
 This repository contains two Rust crates:
 - [j9-sys](./j9-sys/)
 - [j9](./j9/)
