@@ -1,8 +1,12 @@
 [package]
 name = "j9"
 version = "0.1.0"
+authors = ["ynqa <un.pensiero.vano@gmail.com>"]
 edition = "2021"
-
+description = "Rust interface for jq-based JSON processing"
+repository = "https://github.com/ynqa/j9"
+license = "MIT"
+readme = "README.md"
 [lib]
 name = "j9"
 path = "src/lib.rs"

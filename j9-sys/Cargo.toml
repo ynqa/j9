@@ -1,7 +1,12 @@
 [package]
 name = "j9-sys"
 version = "0.1.0"
+authors = ["ynqa <un.pensiero.vano@gmail.com>"]
 edition = "2021"
+description = "Rust bindings for jq"
+repository = "https://github.com/ynqa/j9"
+license = "MIT"
+readme = "README.md"
 
 [dependencies]
 
