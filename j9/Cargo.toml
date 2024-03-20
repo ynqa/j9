@@ -1,6 +1,6 @@
 [package]
 name = "j9"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["ynqa <un.pensiero.vano@gmail.com>"]
 edition = "2021"
 description = "Rust interface for jq-based JSON processing"
@@ -12,7 +12,7 @@ name = "j9"
 path = "src/lib.rs"
 
 [dependencies]
-j9-sys = { path = "../j9-sys", version = "0.1.1" }
+j9-sys = { path = "../j9-sys", version = "0.1.2" }
 thiserror = "1.0.57"
 
 [dev-dependencies]
