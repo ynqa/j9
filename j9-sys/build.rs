@@ -35,6 +35,11 @@ fn main() -> anyhow::Result<()> {
     let lexer_src = src_dir.join("src/lexer.c");
     let lexer_target = build_dir.join("src/lexer.c");
     fs::copy(lexer_src, lexer_target)?;
+    // parser.c also
+    //   error: src/parser.c: No such file or directory
+    let parser_src = src_dir.join("src/parser.c");
+    let parser_target = build_dir.join("src/parser.c");
+    fs::copy(parser_src, parser_target)?;
 
     // See https://github.com/jqlang/jq/tree/jq-1.7.1?#instructions
     autotools::Config::new(&build_dir)
