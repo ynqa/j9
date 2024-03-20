@@ -36,6 +36,10 @@ jobs:
             clang-15 \
             lldb-15 \
             lld-15
+      - name: Set default compiler to clang
+        run: |
+          echo "CC=clang-15" >> $GITHUB_ENV
+          echo "CXX=clang++-15" >> $GITHUB_ENV
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
