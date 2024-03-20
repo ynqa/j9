@@ -8,18 +8,22 @@ use std::{
 };
 
 fn check_installed(name: &str) -> anyhow::Result<()> {
-    let check = Command::new(name)
-        .arg("--version")
-        .output();
+    let check = Command::new(name).arg("--version").output();
 
     match check {
         Ok(output) => {
             if !output.status.success() {
-                return Err(anyhow::anyhow!("{} is required, but it's not installed or not in PATH.", name));
+                return Err(anyhow::anyhow!(
+                    "{} is required, but it's not installed or not in PATH.",
+                    name
+                ));
             }
-        },
+        }
         Err(_) => {
-            return Err(anyhow::anyhow!("{} is required, but it's not installed or not in PATH.", name));
+            return Err(anyhow::anyhow!(
+                "{} is required, but it's not installed or not in PATH.",
+                name
+            ));
         }
     }
 
