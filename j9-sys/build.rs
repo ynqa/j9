@@ -29,6 +29,13 @@ fn main() -> anyhow::Result<()> {
         }
     }
 
+    // It seems that modifying the timestamp of the lexer.c file by copying
+    // it to the target directory is necessary to circumvent an error that goes something like:
+    //   cc1: fatal error: src/lexer.c: No such file or directory compilation terminated.
+    let lexer_src = src_dir.join("src/lexer.c");
+    let lexer_target = build_dir.join("src/lexer.c");
+    fs::copy(lexer_src, lexer_target)?;
+
     // See https://github.com/jqlang/jq/tree/jq-1.7.1?#instructions
     autotools::Config::new(&build_dir)
         .reconf("-i")
