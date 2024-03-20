@@ -4,9 +4,33 @@ extern crate bindgen;
 use std::{
     env, fs,
     path::{Path, PathBuf},
+    process::Command,
 };
 
+fn check_installed(name: &str) -> anyhow::Result<()> {
+    let check = Command::new(name)
+        .arg("--version")
+        .output();
+
+    match check {
+        Ok(output) => {
+            if !output.status.success() {
+                return Err(anyhow::anyhow!("{} is required, but it's not installed or not in PATH.", name));
+            }
+        },
+        Err(_) => {
+            return Err(anyhow::anyhow!("{} is required, but it's not installed or not in PATH.", name));
+        }
+    }
+
+    Ok(())
+}
+
 fn main() -> anyhow::Result<()> {
+    // Check if autoconf is installed
+    check_installed("autoconf")?;
+    check_installed("automake")?;
+
     let out_dir = env::var("OUT_DIR").map(PathBuf::from)?;
     let src_dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("jq");
     let build_dir = out_dir.join("jq_build");
