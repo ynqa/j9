@@ -9,7 +9,7 @@ To use j9, add it as a dependency in your Cargo.toml:
 
 ```toml
 [dependencies]
-j9 = "0.1.1"
+j9 = "0.1.3"
 ```
 
 ## Example
