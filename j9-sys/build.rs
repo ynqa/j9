@@ -81,11 +81,7 @@ fn main() -> anyhow::Result<()> {
         .build();
 
     let lib_dir = out_dir.join("lib");
-    let include_dir = out_dir.join("include");
-
     println!("cargo:rustc-link-search=native={}", lib_dir.display());
-    println!("cargo:include={}", include_dir.display());
-
     for lib in &["onig", "jq"] {
         println!("cargo:rustc-link-lib=static={}", lib);
     }
